@@ -10,18 +10,18 @@ export default function UnityProject() {
         <div className="w-16 h-1.5 bg-emerald-500 mx-auto rounded-full"></div>
 
         <p className="text-gray-500 mt-6">
-          Unity 엔진을 활용한 간단한 2D/3D 게임 제작 프로젝트
+          Unity 엔진을 활용한 간단한 2D 게임 제작 프로젝트
         </p>
       </div>
 
-      <section className="mb-8 p-6 bg-white border rounded-2xl shadow-sm">
+      <section className="mb-8 p-6 bg-white border border-gray-200 rounded-2xl shadow-sm">
         <h2 className="text-xl font-semibold mb-2">🧩 프로젝트 개요</h2>
         <p>
           Unity Engine을 사용하여 플레이어 조작, 충돌 처리, 간단한 게임 로직이 포함된 미니 게임을 제작했습니다.
         </p>
       </section>
 
-      <section className="mb-8 p-6 bg-white border rounded-2xl shadow-sm">
+      <section className="mb-8 p-6 bg-white border border-gray-200 rounded-2xl shadow-sm">
         <h2 className="text-xl font-semibold mb-2">🎮 주요 기능</h2>
         <ul className="list-disc ml-6">
           <li>플레이어 이동 (키보드 / 터치 입력)</li>
@@ -31,7 +31,7 @@ export default function UnityProject() {
         </ul>
       </section>
 
-      <section className="mb-8 p-6 bg-white border rounded-2xl shadow-sm">
+      <section className="mb-8 p-6 bg-white border border-gray-200 rounded-2xl shadow-sm">
         <h2 className="text-xl font-semibold mb-2">🛠 사용 기술</h2>
         <ul className="list-disc ml-6">
           <li>Unity Engine</li>
@@ -41,14 +41,14 @@ export default function UnityProject() {
         </ul>
       </section>
 
-      <section className="mb-8 p-6 bg-white border rounded-2xl shadow-sm">
+      <section className="mb-8 p-6 bg-white border border-gray-200 rounded-2xl shadow-sm">
         <h2 className="text-xl font-semibold mb-2">💡 인사이트</h2>
         <p>
           Unity 오브젝트 중심 구조와 이벤트 기반 로직 설계 중요성 이해.
         </p>
       </section>
 
-      <section className="mb-8 p-6 bg-white border rounded-2xl shadow-sm">
+      <section className="mb-8 p-6 bg-white border border-gray-200 rounded-2xl shadow-sm">
 
       {/* 헤더 + 작은 설명 */}
       <div className="flex items-end gap-3 mb-4">

@@ -11,7 +11,7 @@ export default function TablePreview({ file }: { file: string }) {
       .then((res) => res.arrayBuffer())
       .then((ab) => {
         const workbook = XLSX.read(ab);
-        const sheet = workbook.Sheets[workbook.SheetNames[0]];
+        const sheet = workbook.Sheets[workbook.SheetNames[2]];
         const json = XLSX.utils.sheet_to_json(sheet);
         setData(json);
       })

@@ -12,11 +12,11 @@ const menu = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
+  const [scrolled, setScrolled] = useState(false);
 
   const pathname = usePathname();
   const router = useRouter();
 
-  // ✅ 핵심: 상태를 하나로 통합 (충돌 방지)
   const pageType =
     pathname === "/"
       ? "home"
@@ -30,6 +30,19 @@ export default function Header() {
   const isProjectsPage = pageType === "projects";
   const isProjectDetail = pageType === "projectDetail";
 
+  // 🔥 스크롤 감지 (헤더 스타일 변화용)
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // 🔥 active section tracking
   useEffect(() => {
     if (!isHome) return;
 
@@ -63,7 +76,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHome]);
 
-  // 로고 클릭
   const handleLogoClick = () => {
     if (isHome) {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -73,11 +85,14 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b border-white/20 bg-white/70 h-[72px]">
-
+    <header
+      className={`fixed top-0 left-0 w-full z-50 h-[72px] transition-all duration-300
+      backdrop-blur-md
+      ${scrolled ? "bg-white/90 shadow-sm border-b border-gray-200" : "bg-white/60 border-b border-transparent"}`}
+    >
       <div className="max-w-6xl mx-auto w-full h-full px-4 sm:px-6 lg:px-8 flex justify-between items-center">
 
-        {/* 로고 */}
+        {/* 🔥 로고 */}
         <button
           onClick={handleLogoClick}
           className="font-extrabold text-xl tracking-tight text-gray-900 hover:opacity-80 transition"
@@ -85,9 +100,10 @@ export default function Header() {
           Guy <span className="text-emerald-500">Portfolio</span>
         </button>
 
-        {/*  HOME  */}
+        {/* ================= HOME ================= */}
         {isHome && (
           <>
+            {/* 데스크탑 메뉴 */}
             <nav className="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-wider">
               {menu.map((item) => (
                 <a
@@ -101,6 +117,7 @@ export default function Header() {
                 >
                   {item.label}
 
+                  {/* 밑줄 애니메이션 */}
                   <span
                     className={`absolute left-0 bottom-0 h-[2px] rounded-full transition-all duration-300 ${
                       active === item.id
@@ -112,6 +129,7 @@ export default function Header() {
               ))}
             </nav>
 
+            {/* 모바일 햄버거 */}
             <button
               className="md:hidden text-2xl text-gray-800"
               onClick={() => setOpen(!open)}
@@ -149,17 +167,16 @@ export default function Header() {
             </button>
           </div>
         )}
-
       </div>
 
-      {/* ================= MOBILE MENU ================= */}
+      {/* ================= 모바일 메뉴 ================= */}
       {isHome && (
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ${
-            open ? "max-h-64 border-t border-white/20" : "max-h-0"
+            open ? "max-h-64 border-t border-gray-200" : "max-h-0"
           }`}
         >
-          <div className="flex flex-col gap-5 px-6 py-6 bg-white/70 text-sm font-bold uppercase tracking-widest backdrop-blur-md">
+          <div className="flex flex-col gap-5 px-6 py-6 bg-white/90 text-sm font-bold uppercase tracking-widest backdrop-blur-md">
             {menu.map((item) => (
               <a
                 key={item.id}
@@ -177,7 +194,6 @@ export default function Header() {
           </div>
         </div>
       )}
-
     </header>
   );
 }

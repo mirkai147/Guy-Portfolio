@@ -62,16 +62,58 @@ export default function Home() {
 
       {/* 1️⃣ Hero */}
       <section className="h-screen flex flex-col items-center justify-center text-center px-4 relative overflow-hidden">
-        <div className="absolute w-[500px] h-[500px] bg-emerald-500/10 blur-[120px] rounded-full -z-10" />
 
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight text-gray-900">
-          게임의 문제를 발견하고
-        </h1>
+        {/* <img
+          src="/images/monument.png"
+          className="absolute opacity-15 w-[450px] md:w-[650px]
+                    top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                    pointer-events-none select-none"
+        />
 
-        <h2 className="text-xl md:text-2xl text-gray-500 font-medium max-w-2xl leading-relaxed">
-          개선안을 제시하는{" "}
-          <span className="text-emerald-500 font-semibold">QA 엔지니어</span> 김가이입니다.
-        </h2>
+        <div className="relative z-10 px-8 py-6 rounded-2xl">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900">
+            게임의 문제를 발견하고
+          </h1>
+
+          <h2 className="text-xl md:text-2xl text-gray-700 font-medium">
+            개선안을 제시하는{" "}
+            <span className="text-emerald-500 font-semibold">QA </span> 김가이입니다.
+          </h2>
+        </div> */}
+
+        {/* 전체 Wrapper: 여기서 중앙 그라데이션 효과를 관리합니다 */}
+        <div className="relative flex items-center justify-center h-full w-full">
+
+          {/* 배경 이미지: Wrapper 크기에 맞추고, opacity를 살짝 높였습니다. */}
+          <img
+            src="/images/monument.png"
+            className="absolute opacity-10 w-[350px] md:w-[600px] 
+                      pointer-events-none select-none
+                      blur-[1px]"
+            alt="background decoration"
+          />
+
+          {/* 💡 핵심: 구름 같은 가림막 (Gradient Overlay) */}
+          {/* 중앙은 투명하고, 외각으로 갈수록 배경색(흰색 계열)으로 변하는 그라데이션 */}
+          <div className="absolute inset-0 z-0
+                          bg-[radial-gradient(circle_at_center,_transparent_10%,_#f7f8f9_80%)]">
+          </div>
+
+          {/* 텍스트 컨테이너: 이제 backdrop-blur나 배경색을 빼서 이질감을 없앱니다. */}
+          <div className="relative z-10 px-8 py-6 text-center">
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900 drop-shadow-sm">
+              게임의 문제를 발견하고
+            </h1>
+
+          {/* 💡 (선택사항) 'QA' 텍스트 컬러를 배경에 맞춰 조금 더 밝게 조정할 수도 있습니다. */}
+            <h2 className="text-xl md:text-2xl text-gray-700 font-medium drop-shadow-sm">
+              개선안을 제시하는{" "}
+              <span className="text-emerald-400 font-semibold">QA </span> 김가이입니다.
+            </h2>
+          </div>
+
+        </div>
+
       </section>
 
       {/* 2️⃣ Intro */}
