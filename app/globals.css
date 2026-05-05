@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f7f8;
+  --foreground: #111827;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* 🔥 공통 디자인 시스템 */
+
+/* 섹션 */
+.section {
+  @apply py-24 px-6 max-w-6xl mx-auto;
+}
+
+/* 섹션 제목 */
+.section-title {
+  @apply text-4xl font-bold text-gray-900 mb-4 text-center;
+}
+
+/* 섹션 라인 */
+.section-line {
+  @apply w-16 h-1.5 bg-emerald-500 mx-auto rounded-full;
+}
+
+/* 카드 */
+.card {
+  @apply bg-white border border-gray-200 rounded-3xl shadow-sm hover:shadow-md transition-all;
+}
+
+/* 토스트 애니메이션 */
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+.animate-fade-out {
+  animation: fade-out 0.3s ease-in forwards;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+  /* Next.js 스크롤바가 생겨도 배경색이 깨지지 않게 방지 */
+  background-color: var(--background); 
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
