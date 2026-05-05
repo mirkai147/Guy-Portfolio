@@ -45,6 +45,13 @@ const projects = [
     category: "💻 개발 프로젝트",
     image: "/images/web.jpg",
   },
+  {
+    title: "종스크롤 게임 개발 프로젝트",
+    desc: "유니티 기반 종스크롤 러닝 액션 슈팅",
+    path: "/projects/unity",
+    category: "💻 개발 프로젝트",
+    image: "/images/unity.jpg",
+  },
 ];
 
 export default function Projects() {

@@ -82,10 +82,10 @@ export default function Header() {
           onClick={handleLogoClick}
           className="font-extrabold text-xl tracking-tight text-gray-900 hover:opacity-80 transition"
         >
-          QA <span className="text-emerald-500">Portfolio</span>
+          Guy <span className="text-emerald-500">Portfolio</span>
         </button>
 
-        {/* ================= HOME ================= */}
+        {/*  HOME  */}
         {isHome && (
           <>
             <nav className="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-wider">

@@ -89,11 +89,17 @@ export default function Home() {
             </h3>
 
             <div className="space-y-4 text-gray-600 leading-relaxed text-lg">
-              <p>1234</p>
-              <p>5678</p>
               <p>
-                데이터 기반 분석력과 글로벌 커뮤니케이션 역량을 바탕으로
-                사용자 경험을 개선하는 QA가 되고자 합니다.
+                게임의 문제를 분석하고 개선하는 QA 전문가를 목표로 하고 있습니다.
+              </p>
+              <p>
+                게임 제작과 웹 프로젝트 등 다양한 경험을 통해 역량을 길러왔고, 기능 검증뿐만 아니라 사용자 관점에서의 문제를 바라보는 시각을 키워왔습니다.
+              </p>
+              <p>
+                단순히 오류를 찾는 QA가 아니라, 서비스의 구조와 사용자 경험을 함께 이해하며 개선 방향까지 고민하는 QA로 성장하고자 합니다.
+              </p>
+              <p>
+                다양한 프로젝트 경험을 통해 문제를 더 깊이 이해하고, 더 나은 품질을 만들어가는 QA로 계속 성장해 나가겠습니다. 
               </p>
             </div>
           </div>
@@ -101,9 +107,12 @@ export default function Home() {
           {/* 오른쪽 카드 */}
           <div className="grid gap-4">
             {[
-              { title: "🌍 1", desc: "1" },
-              { title: "📊 2", desc: "2" },
-              { title: "🔍 3", desc: "3" },
+              { title: "🌍 Game QA Specialist (2025.05 ~ 2026.01)", 
+                desc: "게임 QA 실무 프로세스를 집중적으로 학습하며 테스트 케이스 설계 및 결함 관리 역량을 쌓았습니다. 개발 지식과 QA 방법론을 융합하여, 효율적이고 논리적인 테스트 전략을 수립하는 신입 QA입니다." },
+              { title: "📊 Web Back-end (2022.11 ~ 2023.05)", 
+                desc: "JSP와 Spring 프레임워크를 활용하여 서버 로직과 데이터베이스(SQL) 설계 과정을 이수했습니다. 시스템의 동작 원리를 이해하고 있어, 통신 오류나 DB 정합성 문제를 기술적으로 추적할 수 있습니다." },
+              { title: "🔍 Web Front-end (2020.02 ~ 2020.08)", 
+                desc: "HTML, CSS, JavaScript를 기반으로 사용자 중심의 웹 인터페이스 구현 능력을 습득했습니다. UI/UX의 구조적 이해를 바탕으로, 게임 런처나 웹 이벤트 페이지 등 사용자 접점에서의 세밀한 검수가 가능합니다." },
             ].map((item, idx) => (
               <div
                 key={idx}
@@ -134,12 +143,12 @@ export default function Home() {
               </h4>
 
               {[
-                { name: "TestRail", level: 75 },
-                { name: "Playwright", level: 60 },
-                { name: "Jira", level: 70 },
-                { name: "Postman", level: 65 },
-                { name: "Jenkins", level: 50 },
-                { name: "Git / GitHub", level: 65 },
+                { name: "Git / GitHub", level: 85 },
+                { name: "SQL / Database", level: 80 },
+                { name: "Jira", level: 75 },
+                { name: "Postman", level: 80 },
+                { name: "PS Studio", level: 80 },
+                { name: "Office", level: 70 },
               ].map((tool) => (
                 <div key={tool.name} className="mb-6 last:mb-0">
                   <div className="flex justify-between text-sm mb-2 font-medium">
@@ -162,13 +171,13 @@ export default function Home() {
               <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm">
                 <h4 className="text-xl font-bold mb-6 flex items-center gap-2 text-gray-900">
                   <span className="w-2 h-6 bg-emerald-500 rounded-full"></span>
-                  Example Section
+                  Engineering Background
                 </h4>
 
                 <div className="space-y-3 text-gray-600">
-                  <div>• 1</div>
-                  <div>• 2</div>
-                  <div>• 3</div>
+                  <div><span className="font-bold">• Web Dev: </span>Spring, Node 기반 풀스택 웹 프로젝트 경험</div>
+                  <div><span className="font-bold">• Database: </span>SQL을 활용한 데이터 조회 및 검증 능력 보유</div>
+                  <div><span className="font-bold">• Tools: </span>Git/GitHub를 활용한 코드 형상 관리 및 협업 숙련</div>
                 </div>
               </div>
 
@@ -204,7 +213,7 @@ export default function Home() {
           <h2 className="text-4xl font-bold mb-4 text-gray-900">Portfolio</h2>
           <div className="w-16 h-1.5 bg-emerald-500 mx-auto rounded-full"></div>
           <p className="text-gray-500 mt-6 max-w-2xl mx-auto">
-            QA 산출물들이 순차적으로 업데이트될 예정입니다.
+            프로젝트 산출물들이 계속해서 업데이트될 예정입니다.
           </p>
         </div>
 
