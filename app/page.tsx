@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const portfolioItems = [
@@ -37,6 +37,13 @@ const portfolioItems = [
 ];
 
 export default function Home() {
+
+  const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+      setLoaded(true);
+    }, []);
+
   const [visible, setVisible] = useState(false);
   const [leaving, setLeaving] = useState(false);
 
@@ -63,52 +70,36 @@ export default function Home() {
       {/* 1️⃣ Hero */}
       <section className="h-screen flex flex-col items-center justify-center text-center px-4 relative overflow-hidden">
 
-        {/* <img
-          src="/images/monument.png"
-          className="absolute opacity-15 w-[450px] md:w-[650px]
-                    top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                    pointer-events-none select-none"
-        />
-
-        <div className="relative z-10 px-8 py-6 rounded-2xl">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900">
-            게임의 문제를 발견하고
-          </h1>
-
-          <h2 className="text-xl md:text-2xl text-gray-700 font-medium">
-            개선안을 제시하는{" "}
-            <span className="text-emerald-500 font-semibold">QA </span> 김가이입니다.
-          </h2>
-        </div> */}
-
         {/* 전체 Wrapper: 여기서 중앙 그라데이션 효과를 관리합니다 */}
         <div className="relative flex items-center justify-center h-full w-full">
 
-          {/* 배경 이미지: Wrapper 크기에 맞추고, opacity를 살짝 높였습니다. */}
+          {/* 배경 이미지 */}
           <img
             src="/images/monument.png"
-            className="absolute opacity-10 w-[350px] md:w-[600px] 
-                      pointer-events-none select-none
-                      blur-[1px]"
             alt="background decoration"
-          />
+            className={`
+              absolute w-[350px] md:w-[600px]
+              pointer-events-none select-none blur-[3px]
+              transition-all duration-3000 ease-in-out delay-100
 
-          {/* 💡 핵심: 구름 같은 가림막 (Gradient Overlay) */}
+              ${loaded ? "opacity-25 translate-y-0" : "opacity-0 translate-y-10"}
+            `}
+          />
+          
           {/* 중앙은 투명하고, 외각으로 갈수록 배경색(흰색 계열)으로 변하는 그라데이션 */}
           <div className="absolute inset-0 z-0
                           bg-[radial-gradient(circle_at_center,_transparent_10%,_#f7f8f9_80%)]">
           </div>
 
-          {/* 텍스트 컨테이너: 이제 backdrop-blur나 배경색을 빼서 이질감을 없앱니다. */}
+          {/* 텍스트 컨테이너 */}
           <div className="relative z-10 px-8 py-6 text-center">
             <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900 drop-shadow-sm">
               게임의 문제를 발견하고
             </h1>
-
-          {/* 💡 (선택사항) 'QA' 텍스트 컬러를 배경에 맞춰 조금 더 밝게 조정할 수도 있습니다. */}
             <h2 className="text-xl md:text-2xl text-gray-700 font-medium drop-shadow-sm">
               개선안을 제시하는{" "}
-              <span className="text-emerald-400 font-semibold">QA </span> 김가이입니다.
+              <span className="bg-emerald-400/20 text-emerald-400 px-1 rounded
+              font-semibold [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">QA</span> 김가이입니다.
             </h2>
           </div>
 
@@ -132,7 +123,7 @@ export default function Home() {
 
             <div className="space-y-4 text-gray-600 leading-relaxed text-lg">
               <p>
-                게임의 문제를 분석하고 개선하는 QA 전문가를 목표로 하고 있습니다.
+                게임의 문제를 분석하고 개선하는 게임 QA 전문가를 목표로 하고 있습니다.
               </p>
               <p>
                 게임 제작과 웹 프로젝트 등 다양한 경험을 통해 역량을 길러왔고, 기능 검증뿐만 아니라 사용자 관점에서의 문제를 바라보는 시각을 키워왔습니다.
@@ -189,8 +180,8 @@ export default function Home() {
                 { name: "SQL / Database", level: 80 },
                 { name: "Jira", level: 75 },
                 { name: "Postman", level: 80 },
-                { name: "PS Studio", level: 80 },
-                { name: "Office", level: 70 },
+                { name: "PS Studio", level: 70 },
+                { name: "Office", level: 75 },
               ].map((tool) => (
                 <div key={tool.name} className="mb-6 last:mb-0">
                   <div className="flex justify-between text-sm mb-2 font-medium">
