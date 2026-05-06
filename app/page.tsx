@@ -98,8 +98,11 @@ export default function Home() {
             </h1>
             <h2 className="text-xl md:text-2xl text-gray-700 font-medium drop-shadow-sm">
               개선안을 제시하는{" "}
-              <span className="bg-emerald-400/20 text-emerald-400 px-1 rounded
-              font-semibold [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">QA</span> 김가이입니다.
+              <span
+                className="bg-emerald-300/30 text-emerald-600 px-2 py-1 rounded-lg
+                font-bold
+                [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
+              >QA</span> 김가이입니다.
             </h2>
           </div>
 
